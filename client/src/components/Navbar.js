@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink , Link} from "react-router-dom";
 
 const Header = () => {
   let Links = [
@@ -71,9 +71,9 @@ const Header = () => {
               onClick={() => setClose(!close)}
             >
               <div className='flex w-full h-full'>
-                <a href='#' className='hover:text-[#ffd39c]'>
+                <Link href='#' className='hover:text-[#ffd39c]'>
                   <p>{"Candidates"}</p>
-                </a>
+                </Link>
                 <div className='invisible'>
                   <ion-icon
                     name={close ? "chevron-up" : "chevron-down"}
@@ -96,13 +96,13 @@ const Header = () => {
               >
                 <ul>
                   <li className='hover:text-[#ffd39c] transition-all duration-300'>
-                    <a href='/candid1'>Kadek Ninda N.P</a>
+                    <Link href='/candid1'>Kadek Ninda N.P</Link>
                   </li>
                   <li className='mt-3 hover:text-[#ffd39c] transition-all duration-300'>
-                    <a href='/candid2'>Konang Tyagazain N.</a>
+                    <Link href='/candid2'>Konang Tyagazain N.</Link>
                   </li>
                   <li className='mt-3 hover:text-[#ffd39c] transition-all duration-300'>
-                    <a href='/candid3'>Billy Fahd Qodama</a>
+                    <Link href='/candid3'>Billy Fahd Qodama</Link>
                   </li>
                 </ul>
               </div>
