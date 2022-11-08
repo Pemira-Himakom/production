@@ -2,9 +2,13 @@ import { useDispatch } from "react-redux";
 import { useRef } from "react";
 
 import candidate from "../../../img/candidates/removal.png";
+import billi from "../../../img/billi.png";
+import konang from "../../../img/konang.png";
+import ninda from "../../../img/ninda.png";
+
 import { setSelect } from "../../../store/voteSlice";
 
-const Candid = (props) => {
+const Candid = props => {
   const dispatch = useDispatch();
   const optionRef = useRef();
 
@@ -12,28 +16,38 @@ const Candid = (props) => {
     const name = props.name;
     const number = optionRef.current.value;
     console.log(name, number);
-    
+
     dispatch(setSelect({ name, number }));
   };
 
+  let IMG_URL;
+
+  if (props.no === "1") {
+    IMG_URL = ninda;
+  } else if (props.no === "2") {
+    IMG_URL = konang;
+  } else{
+    IMG_URL = billi;
+  }
+
   return (
-    <div className="w-64 h-[400px] border-4 border-choco-border p-4 pt-9 flex flex-col">
-      <div className="bg-choco border-4 border-choco-border h-[272px]">
-        <div className="relative -translate-y-5">
-          <img src={candidate} alt="candidate" className="h-54" />
+    <div className='w-64 h-[400px] border-4 border-choco-border p-4 pt-9 flex flex-col'>
+      <div className='bg-choco border-4 border-choco-border h-[272px]'>
+        <div className='relative -translate-y-5'>
+          <img src={IMG_URL} alt='candidate' className='h-54' />
         </div>
-        <div className="flex bg-choco-border relative -translate-y-5">
-          <div className="h-16 w-12 bg-choco flex justify-center items-center font-prata text-[28px] text-choco-border">
+        <div className='flex bg-choco-border relative -translate-y-5'>
+          <div className='h-16 w-12 bg-choco flex justify-center items-center font-prata text-[28px] text-choco-border'>
             {props.no}
           </div>
-          <div className="text-choco font-prata flex justify-center mx-auto items-center text-base">
-            <span className="text-center px-2">{props.name}</span>
+          <div className='text-choco font-prata flex justify-center mx-auto items-center text-base'>
+            <span className='text-center px-2'>{props.name}</span>
           </div>
         </div>
       </div>
-      <div className="justify-self-end">
+      <div className='justify-self-end'>
         <button
-          className="bg-choco text-whiteWeak py-3 font-prata text-xl w-full mt-5"
+          className='bg-choco text-whiteWeak py-3 font-prata text-xl w-full mt-5'
           value={props.no}
           ref={optionRef}
           onClick={handleClick}

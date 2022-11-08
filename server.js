@@ -6,7 +6,7 @@ dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
-import cors from "cors";
+// import cors from "cors";
 import mongoSanitize from "express-mongo-sanitize";
 
 import validate_token from "./routes/validate_token.js";
@@ -18,9 +18,9 @@ import revalidate from "./routes/validate_token.js";
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({ origin: process.env.ALLOWED_ORIGIN || "http://localhost:3000" })
-);
+// app.use(
+//   cors({ origin: process.env.ALLOWED_ORIGIN || "http://localhost:3000" })
+// );
 
 app.use("/api/validate_token", validate_token);
 app.use("/api/vote", vote);

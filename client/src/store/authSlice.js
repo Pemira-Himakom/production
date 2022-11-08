@@ -32,10 +32,10 @@ export const authSlice = createSlice({
 export const login = (input, command) => {
   return async dispatch => {
     dispatch(setLoading());
-    const url = getURL(command);
+    // const url = getURL(command);
 
     const sendRequest = async input => {
-      const response = await fetch(url, {
+      const response = await fetch("api/validate_token", {
         method: "POST",
         body: JSON.stringify(input),
         headers: {
@@ -71,24 +71,24 @@ export const login = (input, command) => {
   };
 };
 
-function getURL(command, adminID) {
-  if (command === "LOGIN_ADMIN") {
-    return `${BASE_URL}/api/admin/authenticate`;
-  } else if (command === "LOGIN_USER") {
-    return `${BASE_URL}/api/validate_token`;
-  } else if (command === "ASSIGN_TOKEN") {
-    return `${BASE_URL}/api/admin/${adminID}/assign`;
-  } else if (command === "RECAP") {
-    return `${BASE_URL}/api/admin/${adminID}/assign`;
-  }
-}
+// function getURL(command, adminID) {
+//   if (command === "LOGIN_ADMIN") {
+//     return `${BASE_URL}/api/admin/authenticate`;
+//   } else if (command === "LOGIN_USER") {
+//     return `${BASE_URL}/api/validate_token`;
+//   } else if (command === "ASSIGN_TOKEN") {
+//     return `${BASE_URL}/api/admin/${adminID}/assign`;
+//   } else if (command === "RECAP") {
+//     return `${BASE_URL}/api/admin/${adminID}/assign`;
+//   }
+// }
 
 export const adminLogin = form => {
   return async dispatch => {
     dispatch(setLoading());
 
     const sendRequest = async form => {
-      const response = await fetch(`${BASE_URL}/api/admin/authenticate`, {
+      const response = await fetch(`/api/admin/authenticate`, {
         method: "POST",
         body: JSON.stringify(form),
         headers: {

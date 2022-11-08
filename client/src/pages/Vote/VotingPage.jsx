@@ -9,9 +9,9 @@ import { selectedName } from "../../store/voteSlice";
 import Status from "./components/Status";
 
 const candidates = [
-  { no: "1", name: "Achmad Hadzami Setiawan" },
-  { no: "2", name: "Josiah Farrel Suwito" },
-  { no: "3", name: "Jonathan Edmund Kusnadi" },
+  { no: "1", name: "Kadek Ninda Nandita P", img: "../../../img/ninda.png" },
+  { no: "2", name: "Konang Tyagazain N", img: "../../../img/konang.png" },
+  { no: "3", name: "Billy Fahd Qodama", img: "../../../img/billi.png" },
 ];
 
 const VotingPage = () => {
@@ -36,7 +36,7 @@ const VotingPage = () => {
 
       <div className="w-screen h-screen flex justify-center items-center gap-x-14">
         {candidates.map((item, index) => (
-          <Candid key={index} id={item.no} no={item.no} name={item.name} />
+          <Candid key={index} id={item.no} no={item.no} name={item.name} img={item.img}/>
         ))}
       </div>
     </>

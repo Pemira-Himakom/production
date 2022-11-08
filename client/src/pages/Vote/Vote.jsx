@@ -25,9 +25,9 @@ const Vote = () => {
   const now = Date.now();
   const voteDate = new Date("2022-11-09");
 
-  if (now < voteDate.getTime()) {
-    return <Navigate to="/unavailable"/>;
-  }
+  // if (now < voteDate.getTime()) {
+  //   return <Navigate to="/unavailable"/>;
+  // }
   
   return (
     <>

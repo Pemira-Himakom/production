@@ -1,32 +1,32 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily:{
+      fontFamily: {
         archivo: ["archivo", "sans-serif"],
         garamond: ["garamond", "sans-serif"],
-        inter: ['Inter', 'sans-serif'],
-        prata: ['Prata', 'serif'],
-        poppins: ['Poppins', 'serif']
-        
+        inter: ["Inter", "sans-serif"],
+        prata: ["Prata", "serif"],
+        poppins: ["Poppins", "serif"],
       },
       colors: {
-        'primary' : '#a04e1f',
-        'choco' : '#A04E1F',
-        'choco-border': '#D4A976',
-        'choco-weak' : 'rgba(160, 78, 31, .4)',
-        'whiteWeak' : '#E6E6E6',
-        'gray-overlay' : 'rgba(103, 103, 103, .7)',
-        'whitegray': '#939393'
+        primary: "#a04e1f",
+        choco: "#A04E1F",
+        "choco-border": "#D4A976",
+        "choco-weak": "rgba(160, 78, 31, .4)",
+        whiteWeak: "#E6E6E6",
+        "gray-overlay": "rgba(103, 103, 103, .7)",
+        whitegray: "#939393",
       },
       backgroundImage: {
-        'vote' : "url('img/vote/BG.png')",
-        'voteDark' : "url('img/bg.png')",
-        'unavail' : "url('img/unavailable/unavail.png')"
-      }
+        vote: "url('img/vote/BG.png')",
+        voteDark: "url('img/bg.png')",
+        unavail: "url('img/unavailable/unavail.png')",
+        konang: "url('img/konang.png')",
+        billy: "url('img/billi.png')",
+        ninda: "url('img/ninda.png')",
+      },
     },
   },
   plugins: [],
-}
+};
