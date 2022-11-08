@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Homepage/Home";
 
 // Admin page
@@ -23,7 +23,6 @@ function App() {
 
   return (
     <div>
-      <Router>
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/candid1' element={<Candidate1 />} />
@@ -40,7 +39,6 @@ function App() {
           </Route>
           <Route path='*' element={<Navigate to='/unavailable' />} />
         </Routes>
-      </Router>
     </div>
   );
 }
