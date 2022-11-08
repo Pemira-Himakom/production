@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink , Link} from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   let Links = [
@@ -20,11 +20,11 @@ const Header = () => {
     <div>
       {/* start header */}
 
-      <div className='w-full h-[64px] fixed top-0 z-40'>
-        <div className='md:flex h-[56px] place-content-end shadow-md py-4 md:px-10 px-7 font-prata bg-[#21201D]'>
+      <div className="w-full h-[64px] fixed top-0 z-40">
+        <div className="md:flex h-[56px] place-content-end shadow-md py-4 md:px-10 px-7 font-prata bg-[#21201D]">
           <div
             onClick={() => setOpen(!open)}
-            className='text-2xl absolute right-8 top-5 pb-3 cursor-pointer md:hidden'
+            className="text-2xl absolute right-8 top-5 pb-3 cursor-pointer md:hidden"
           >
             <ion-icon
               name={open ? "close" : "menu"}
@@ -38,11 +38,11 @@ const Header = () => {
             } md:opacity-100 text-xl`}
           >
             <li
-              key='1'
-              className='ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 hover:text-[#ffd39c]'
+              key="1"
+              className="ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 hover:text-[#ffd39c]"
             >
               <NavLink
-                to='/'
+                to="/"
                 className={({ isActive }) =>
                   isActive ? normalLink : normalLink
                 }
@@ -52,11 +52,11 @@ const Header = () => {
             </li>
 
             <li
-              key='1'
-              className='ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 hover:text-[#ffd39c]'
+              key="1"
+              className="ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 hover:text-[#ffd39c]"
             >
               <NavLink
-                to='/voting'
+                to="/voting"
                 className={({ isActive }) =>
                   isActive ? normalLink : normalLink
                 }
@@ -66,21 +66,21 @@ const Header = () => {
             </li>
 
             <li
-              key='1'
-              className='ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 relative transition-all duration-200 ease-in justify-center '
+              key="1"
+              className="ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 relative transition-all duration-200 ease-in justify-center "
               onClick={() => setClose(!close)}
             >
-              <div className='flex w-full h-full'>
-                <Link href='#' className='hover:text-[#ffd39c]'>
+              <div className="flex w-full h-full">
+                <Link to="#" className="hover:text-[#ffd39c]">
                   <p>{"Candidates"}</p>
                 </Link>
-                <div className='invisible'>
+                <div className="invisible">
                   <ion-icon
                     name={close ? "chevron-up" : "chevron-down"}
                   ></ion-icon>
                 </div>
 
-                <div className=' md:absolute md:right-0 top-2 cursor-pointer '>
+                <div className=" md:absolute md:right-0 top-2 cursor-pointer ">
                   <ion-icon
                     name={close ? "chevron-up" : "chevron-down"}
                   ></ion-icon>
@@ -95,25 +95,25 @@ const Header = () => {
                 }
               >
                 <ul>
-                  <li className='hover:text-[#ffd39c] transition-all duration-300'>
-                    <Link href='/candid1'>Kadek Ninda N.P</Link>
+                  <li className="hover:text-[#ffd39c] transition-all duration-300">
+                    <Link to="/candid1">Kadek Ninda N.P</Link>
                   </li>
-                  <li className='mt-3 hover:text-[#ffd39c] transition-all duration-300'>
-                    <Link href='/candid2'>Konang Tyagazain N.</Link>
+                  <li className="mt-3 hover:text-[#ffd39c] transition-all duration-300">
+                    <Link to="/candid2">Konang Tyagazain N.</Link>
                   </li>
-                  <li className='mt-3 hover:text-[#ffd39c] transition-all duration-300'>
-                    <Link href='/candid3'>Billy Fahd Qodama</Link>
+                  <li className="mt-3 hover:text-[#ffd39c] transition-all duration-300">
+                    <Link to="/candid3">Billy Fahd Qodama</Link>
                   </li>
                 </ul>
               </div>
             </li>
 
             <li
-              key='1'
-              className='ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 hover:text-[#ffd39c]'
+              key="1"
+              className="ml-4 md:ml-8 md:my-0 my-4 px-1 py-1 hover:text-[#ffd39c]"
             >
               <NavLink
-                to='/unavailable'
+                to="/unavailable"
                 className={({ isActive }) =>
                   isActive ? normalLink : normalLink
                 }

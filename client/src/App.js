@@ -23,22 +23,22 @@ function App() {
 
   return (
     <div>
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/candid1' element={<Candidate1 />} />
-          <Route exact path='/candid2' element={<Candidate2 />} />
-          <Route exact path='/candid3' element={<Candidate3 />} />
-          <Route exact path='/unavailable' element={<Unavailable />} />
-          <Route path='/vote' element={<Vote />} />
-          <Route path='/admin' element={<Protected />}>
-            <Route path='login' element={<Login />} />
-            <Route index element={<AdminHome />} />
-            <Route path='/admin/assign' element={<TokenAssignment />} />
-            <Route path='/admin/detect' element={<Detect />} />
-            <Route path='/admin/summary' element={<Summary />} />
-          </Route>
-          <Route path='*' element={<Navigate to='/unavailable' />} />
-        </Routes>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/candid1" element={<Candidate1 />} />
+        <Route exact path="/candid2" element={<Candidate2 />} />
+        <Route exact path="/candid3" element={<Candidate3 />} />
+        <Route exact path="/unavailable" element={<Unavailable />} />
+        <Route path="/vote" element={<Vote />} />
+        <Route path="/admin" element={<Protected />}>
+          <Route path="login" element={<Login />} />
+          <Route index element={<AdminHome />} />
+          <Route path="/admin/assign" element={<TokenAssignment />} />
+          <Route path="/admin/detect" element={<Detect />} />
+          <Route path="/admin/summary" element={<Summary />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </div>
   );
 }
