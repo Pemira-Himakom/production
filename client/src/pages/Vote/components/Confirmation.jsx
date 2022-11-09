@@ -40,10 +40,10 @@ export const Confirmation = () => {
   return (
     <>
       <div
-        className='flex justify-center items-center bg-gray-overlay w-screen h-screen absolute z-10'
+        className='flex justify-center items-center bg-gray-overlay w-screen h-[1400px] md:h-screen absolute z-10'
         onClick={handleCancel}
       ></div>
-      <div className='bg-white font-prata pt-12 pb-8 px-10 absolute z-10 top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2'>
+      <div className='bg-white font-prata pt-12 pb-8 px-10 absolute z-10 top-[80%] md:top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2'>
         <h2 className='text-center text-3xl text-choco'>Confirmation</h2>
         <p className='w-60 text-center text-sm p-4 font-inter text-choco my-4'>
           Are you sure you want to vote for candidate{" "}

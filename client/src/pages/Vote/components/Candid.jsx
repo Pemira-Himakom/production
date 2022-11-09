@@ -30,13 +30,13 @@ const Candid = props => {
   }
 
   return (
-    <div className='w-64 h-[400px] border-4 border-choco-border p-4 pt-9 flex flex-col'>
+    <div className='w-80 md:w-64 h-full md:h-[400px] border-4 border-choco-border p-4 pt-9 flex flex-col'>
       <div className='bg-choco border-4 border-choco-border h-[272px]'>
         <div className='relative -translate-y-5'>
-          <img src={IMG_URL} alt='candidate' className='h-56 w-56' />
+          <img src={IMG_URL} alt='candidate' className='pl-5 md:pl-0 h-56 w-64 md:w-56' />
         </div>
         <div className='flex bg-choco-border relative -translate-y-5'>
-          <div className='h-16 w-12 bg-choco flex justify-center items-center font-prata text-[28px] text-choco-border'>
+          <div className='h-16 w-16 bg-choco flex justify-center items-center font-prata text-[28px] border-[#D4A976] border-[3px] text-choco-border border-y-4'>
             {props.no}
           </div>
           <div className='text-choco font-prata flex justify-center mx-auto items-center text-base'>
@@ -46,7 +46,7 @@ const Candid = props => {
       </div>
       <div className='justify-self-end'>
         <button
-          className='bg-choco text-whiteWeak py-3 font-prata text-xl w-full mt-5'
+          className='bg-choco text-whiteWeak py-3 font-prata text-xl w-full mt-5 hover:scale-110 duration-200'
           value={props.no}
           ref={optionRef}
           onClick={handleClick}
