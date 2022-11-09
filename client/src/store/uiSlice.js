@@ -6,6 +6,7 @@ const initialState = {
   error: {},
   confirmation: false,
   votedSuccess: false,
+  isAssigned: false,
 };
 
 export const uiSlice = createSlice({
@@ -38,12 +39,26 @@ export const uiSlice = createSlice({
     setVotedSuccess: state => {
       state.votedSuccess = true;
     },
+    setIsAssigned: state => {
+      state.isAssigned = true;
+    },
+    resetAssigned: state => {
+      state.isAssigned = false;
+    },
   },
 });
 
-export const { setVotedSuccess, setLoading, setSuccess, setError, resetUIState } =
-  uiSlice.actions;
+export const {
+  setIsAssigned,
+  resetAssigned,
+  setVotedSuccess,
+  setLoading,
+  setSuccess,
+  setError,
+  resetUIState,
+} = uiSlice.actions;
 
 export default uiSlice.reducer;
 export const selectedUI = state => state.ui;
-export const selectedIsVoted = state => state.ui.votedSuccess
+export const selectedIsVoted = state => state.ui.votedSuccess;
+export const selectIsAssigned = state => state.ui.isAssigned;
