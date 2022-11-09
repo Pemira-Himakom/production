@@ -20,8 +20,8 @@ const VotingPage = () => {
   return (
     <>
       <Status />
-      {isVoted && <Confirmation />}
-      <div className="bg-[#B4B4B4]">
+        {isVoted && <Confirmation />}
+      <div className="bg-[#B4B4B4] relative">
         <img
           src={leftFlower}
           alt="left flower"
@@ -34,7 +34,7 @@ const VotingPage = () => {
         ></img>
       </div>
 
-      <div className="w-screen h-screen flex justify-center items-center gap-x-14">
+      <div className="w-screen h-fit py-10 md:h-screen flex md:flex-row flex-col justify-center items-center md:gap-x-14 gap-y-10 ">
         {candidates.map((item, index) => (
           <Candid key={index} id={item.no} no={item.no} name={item.name} img={item.img}/>
         ))}
