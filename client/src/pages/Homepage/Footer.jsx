@@ -1,5 +1,5 @@
 import React from "react";
-import crown from "../../img/crown.png";
+import crown from "../../img/crown.webp";
 import star5 from "../../img/Star5.png";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa";
