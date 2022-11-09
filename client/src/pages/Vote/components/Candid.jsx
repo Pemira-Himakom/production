@@ -1,7 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useRef } from "react";
 
-import candidate from "../../../img/candidates/removal.png";
 import billi from "../../../img/billi.png";
 import konang from "../../../img/konang.png";
 import ninda from "../../../img/ninda.png";
@@ -26,7 +25,7 @@ const Candid = props => {
     IMG_URL = ninda;
   } else if (props.no === "2") {
     IMG_URL = konang;
-  } else{
+  } else {
     IMG_URL = billi;
   }
 
@@ -34,7 +33,7 @@ const Candid = props => {
     <div className='w-64 h-[400px] border-4 border-choco-border p-4 pt-9 flex flex-col'>
       <div className='bg-choco border-4 border-choco-border h-[272px]'>
         <div className='relative -translate-y-5'>
-          <img alt='candidate' className='h-54 w-54 bg-konang' />
+          <img src={IMG_URL} alt='candidate' className='h-56 w-56' />
         </div>
         <div className='flex bg-choco-border relative -translate-y-5'>
           <div className='h-16 w-12 bg-choco flex justify-center items-center font-prata text-[28px] text-choco-border'>
