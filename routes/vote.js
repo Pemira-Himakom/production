@@ -42,7 +42,7 @@ router.route("/").post(authenticateToken, async (req, res) => {
 
     res.json({
       status: true,
-      message: `Vote successful for candidate number ${votedCandidate}`,
+      message: `Vote successful!`,
     });
   } catch (error) {
     res.json({ status: false, message: error.message });
