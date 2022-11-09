@@ -1,8 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useCallback } from "react";
-import { selectedUI } from "../../../store/uiSlice";
 
-import { setUserLogout } from "../../../store/authSlice";
 import {
   selectedNo,
   selectedName,
