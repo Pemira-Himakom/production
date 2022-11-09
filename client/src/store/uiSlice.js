@@ -5,13 +5,14 @@ const initialState = {
   success: {},
   error: {},
   confirmation: false,
+  votedSuccess: false,
 };
 
 export const uiSlice = createSlice({
   name: "ui",
   initialState,
   reducers: {
-    setLoading: (state) => {
+    setLoading: state => {
       state.loading = true;
     },
     setSuccess: (state, action) => {
@@ -22,22 +23,27 @@ export const uiSlice = createSlice({
       state.error.status = true;
       state.error.message = action.payload;
     },
-    resetUIState: (state) => {
+    resetUIState: state => {
       state.loading = false;
       state.success = {};
       state.error = {};
+      state.votedSuccess = false;
     },
-    setConfirmation: (state) => {
+    setConfirmation: state => {
       state.confirmation = true;
     },
-    resetConfirmation: (state) => {
+    resetConfirmation: state => {
       state.confirmation = false;
+    },
+    setVotedSuccess: state => {
+      state.votedSuccess = true;
     },
   },
 });
 
-export const { setLoading, setSuccess, setError, resetUIState } =
+export const { setVotedSuccess, setLoading, setSuccess, setError, resetUIState } =
   uiSlice.actions;
 
 export default uiSlice.reducer;
-export const selectedUI = (state) => state.ui;
+export const selectedUI = state => state.ui;
+export const selectedIsVoted = state => state.ui.votedSuccess

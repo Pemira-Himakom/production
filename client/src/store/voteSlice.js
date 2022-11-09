@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setUserLogout } from "./authSlice";
-import { setLoading, setError, setSuccess } from "./uiSlice";
+import { setLoading, setError, setSuccess, setVotedSuccess } from "./uiSlice";
 
 const VOTE_URL = "/api/vote";
 
@@ -60,6 +60,7 @@ export const postVote = (input) => {
       });
 
       if (result.status) {
+        dispatch(setVotedSuccess);
         dispatch(setSuccess(result.message));
         // show meme?
         dispatch(setUserLogout());

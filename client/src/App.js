@@ -15,6 +15,7 @@ import { Navigate } from "react-router-dom";
 import Detect from "./pages/Admin/Detect";
 import Protected from "./components/Protected";
 import Unavailable from "./pages/Unavailable/Unavailable";
+import Meme from "./pages/Vote/components/Meme";
 
 function App() {
   window.onbeforeunload = function () {
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/candid3" element={<Candidate3 />} />
         <Route exact path="/unavailable" element={<Unavailable />} />
         <Route path="/vote" element={<Vote />} />
+        <Route path='/success' element={<Meme/>}/>
         <Route path="/admin" element={<Protected />}>
           <Route path="login" element={<Login />} />
           <Route index element={<AdminHome />} />

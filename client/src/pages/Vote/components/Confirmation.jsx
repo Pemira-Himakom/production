@@ -9,22 +9,24 @@ import {
   postVote,
   resetVote,
 } from "../../../store/voteSlice";
+import { useNavigate } from "react-router-dom";
 
 export const Confirmation = () => {
   const dispatch = useDispatch();
   const candidateName = useSelector(selectedName);
   const candidateNumber = useSelector(selectedNo);
-  const ui = useSelector(selectedUI);
+  const navigate = useNavigate();
 
   const handleVote = async () => {
     dispatch(postVote(candidateNumber));
+    navigate("/success", { replace: true });
   };
 
   const handleCancel = () => {
     dispatch(resetVote());
   };
 
-  const escFunction = useCallback((event) => {
+  const escFunction = useCallback(event => {
     if (event.key === "Escape") {
       handleCancel();
     }
@@ -40,25 +42,25 @@ export const Confirmation = () => {
   return (
     <>
       <div
-        className="flex justify-center items-center bg-gray-overlay w-screen h-screen absolute z-10"
+        className='flex justify-center items-center bg-gray-overlay w-screen h-screen absolute z-10'
         onClick={handleCancel}
       ></div>
-      <div className="bg-white font-prata pt-12 pb-8 px-10 absolute z-10 top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2">
-        <h2 className="text-center text-3xl text-choco">Confirmation</h2>
-        <p className="w-60 text-center text-sm p-4 font-inter text-choco my-4">
+      <div className='bg-white font-prata pt-12 pb-8 px-10 absolute z-10 top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2'>
+        <h2 className='text-center text-3xl text-choco'>Confirmation</h2>
+        <p className='w-60 text-center text-sm p-4 font-inter text-choco my-4'>
           Are you sure you want to vote for candidate{" "}
-          <span className="font-bold">{candidateName}</span> with number{" "}
-          <span className="font-bold">{candidateNumber}</span>
+          <span className='font-bold'>{candidateName}</span> with number{" "}
+          <span className='font-bold'>{candidateNumber}</span>
         </p>
-        <div className="flex justify-center gap-8 text-sm mt-4">
+        <div className='flex justify-center gap-8 text-sm mt-4'>
           <button
-            className="border-2 py-[2px] px-4 w-24 border-choco text-choco"
+            className='border-2 py-[2px] px-4 w-24 border-choco text-choco'
             onClick={handleCancel}
           >
             Cancel
           </button>
           <button
-            className="border-2 py-[2px] px-4 w-24 bg-choco text-white border-choco"
+            className='border-2 py-[2px] px-4 w-24 bg-choco text-white border-choco'
             onClick={handleVote}
           >
             Vote
