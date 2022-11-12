@@ -5,7 +5,9 @@ import Candidates from "./Candidates";
 import FAQ from "./FAQ";
 import About from "./About";
 import Footer from "./Footer";
+import Nav from "../../components/Navbar"
 
+import $ from 'jquery';
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -13,11 +15,23 @@ export default function Home() {
   useEffect(() => {
     Aos.init({ duration: 700 });
   }, []);
+
+  $(window).scroll(function(){
+    if($(document).scrollTop() > 800){//Here 200 may be not be exactly 200px
+      $('#Nav').hide("swing");
+    }
+
+    if($(document).scrollTop() < 800){//Here 200 may be not be exactly 200px
+      $('#Nav').show("swing");
+    }
+  });
   return (
     <div className='mb-[-1px] w-screen'>
+      <div id="Nav">
+        <Nav/>
+      </div>
       <header
-        className='flex flex-row items-center lg:items-end lg:px-48 h-screen shadow-inner 
-                         bg-fixed bg-center bg-cover bg-img-lg bg-img-sm justify-center lg:justify-start'
+        className='flex flex-row items-center lg:items-end lg:px-48 h-screen shadow-inner bg-fixed bg-center bg-cover bg-img-lg bg-img-sm justify-center lg:justify-start'
       >
         <div
           data-aos='fade-in'

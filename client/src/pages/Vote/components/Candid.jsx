@@ -6,6 +6,7 @@ import konang from "../../../img/konang.png";
 import ninda from "../../../img/ninda.png";
 
 import { setSelect } from "../../../store/voteSlice";
+import $ from 'jquery'
 
 const Candid = props => {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ const Candid = props => {
     console.log(name, number);
 
     dispatch(setSelect({ name, number }));
+    scrollToTop();
   };
 
   let IMG_URL;
@@ -27,6 +29,12 @@ const Candid = props => {
     IMG_URL = konang;
   } else {
     IMG_URL = billi;
+  }
+
+  
+ 
+  function scrollToTop() {
+    $(window).scrollTop(0);
   }
 
   return (
@@ -50,6 +58,7 @@ const Candid = props => {
           value={props.no}
           ref={optionRef}
           onClick={handleClick}
+          id='votebtn'
         >
           Vote
         </button>
