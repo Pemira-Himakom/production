@@ -1,6 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Homepage/Home";
+import { useSelector } from "react-redux";
 
 // Admin page
 import AdminHome from "./pages/Admin/AdminHome";
@@ -21,25 +22,26 @@ function App() {
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
+  const user = useSelector(state => state.auth.user);
 
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/candid1" element={<Candidate1 />} />
-        <Route exact path="/candid2" element={<Candidate2 />} />
-        <Route exact path="/candid3" element={<Candidate3 />} />
-        <Route exact path="/unavailable" element={<Unavailable />} />
-        <Route path="/vote" element={<Vote />} />
-        <Route path='/success' element={<Meme/>}/>
-        <Route path="/admin" element={<Protected />}>
-          <Route path="login" element={<Login />} />
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/candid1' element={<Candidate1 />} />
+        <Route exact path='/candid2' element={<Candidate2 />} />
+        <Route exact path='/candid3' element={<Candidate3 />} />
+        <Route exact path='/unavailable' element={<Unavailable />} />
+        <Route path='/vote' element={<Vote />} />
+        {user && <Route path='/success' element={<Meme />} />}
+        <Route path='/admin' element={<Protected />}>
+          <Route path='login' element={<Login />} />
           <Route index element={<AdminHome />} />
-          <Route path="/admin/assign" element={<TokenAssignment />} />
-          <Route path="/admin/detect" element={<Detect />} />
-          <Route path="/admin/summary" element={<Summary />} />
+          <Route path='/admin/assign' element={<TokenAssignment />} />
+          <Route path='/admin/detect' element={<Detect />} />
+          <Route path='/admin/summary' element={<Summary />} />
         </Route>
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path='*' element={<Navigate to='/' />} />
       </Routes>
     </div>
   );

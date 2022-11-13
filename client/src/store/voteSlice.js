@@ -19,10 +19,10 @@ export const voteSlice = createSlice({
     setSelect: (state, action) => {
       state.selected = action.payload;
     },
-    setConfirmation: (state) => {
+    setConfirmation: state => {
       state.confirmation = true;
     },
-    resetVote: (state) => {
+    resetVote: state => {
       state.selected = {
         name: null,
         number: null,
@@ -33,14 +33,14 @@ export const voteSlice = createSlice({
 });
 
 // vote fetch
-export const postVote = (input) => {
-  return async (dispatch) => {
+export const postVote = input => {
+  return async dispatch => {
     dispatch(setLoading());
 
     const token = localStorage.getItem("token");
     localStorage.removeItem("token");
 
-    const sendRequest = async (input) => {
+    const sendRequest = async input => {
       console.log(input);
       return fetch(VOTE_URL, {
         headers: {
@@ -55,7 +55,7 @@ export const postVote = (input) => {
     };
 
     try {
-      const result = await sendRequest(input).then((data) => {
+      const result = await sendRequest(input).then(data => {
         return data.json();
       });
 
@@ -63,7 +63,9 @@ export const postVote = (input) => {
         dispatch(setVotedSuccess);
         dispatch(setSuccess(result.message));
         // show meme?
-        dispatch(setUserLogout());
+        setTimeout(() => {
+          dispatch(setUserLogout());
+        }, 5000);
         dispatch(resetVote());
       } else {
         dispatch(setError(result.message));
@@ -80,6 +82,6 @@ export const { setSelect, setConfirmation, resetVote } = voteSlice.actions;
 
 export default voteSlice.reducer;
 
-export const selectedVote = (state) => state.vote;
-export const selectedName = (state) => state.vote?.selected.name;
-export const selectedNo = (state) => state.vote?.selected.number;
+export const selectedVote = state => state.vote;
+export const selectedName = state => state.vote?.selected.name;
+export const selectedNo = state => state.vote?.selected.number;
