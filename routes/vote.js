@@ -27,9 +27,14 @@ router.route("/").post(authenticateToken, async (req, res) => {
     if (!foundStudent) throw new Error("Student not found!");
     if (foundStudent.voted) throw new Error("Student already voted!");
 
-    // increment voteCounter of voted candidate  + current date
+    const batch = nim.substring(0, 2);
+
     const foundCandidate = await Candidate.findOneAndUpdate(
-      { date: currentDate, candidateNumber: votedCandidate },
+      {
+        date: currentDate,
+        candidateNumber: votedCandidate,
+        batch: { $regex: batch },
+      },
       { $inc: { voteCounter: 1 } }
     );
 

@@ -40,7 +40,7 @@ router.route("/").post(async (req, res) => {
 
     res.json({
       status: true,
-      message: "Successful authenticaton! Proceed to vote.",
+      message: "Successful authentication! Proceed to vote.",
       accessToken: accessToken,
     });
   } catch (error) {

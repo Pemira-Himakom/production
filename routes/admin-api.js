@@ -54,7 +54,7 @@ router
   .post(parseCookie, authenticateToken, async (req, res) => {
     try {
       const { _id, admin } = req.user;
-      
+
       if (!admin) throw new Error("Forbidden!");
 
       const newToken = jwt.sign(
@@ -106,36 +106,38 @@ router
   });
 
 // student list
-router.route("/recap/studentList").get((parseCookie, authenticateToken,req, res) => {
-  const { _id } = req.user;
-  const query = {$voted: false};
+router
+  .route("/recap/studentList")
+  .get((parseCookie, authenticateToken, req, res) => {
+    const { _id } = req.user;
+    const query = { $voted: false };
 
-  Admin.exists({ _id: adminID }, (err) => {
-    if (err) {
-      console.log(err);
-      res.json({ status: false, message: "Admin not found" });
-    } else {
-      Student.find(query, (err, list) => {
-        if (err) {
-          console.log(err);
-          res.json({ status: false });
-        } else {
-          // filter list to only display {NIM, name, voted}
-          if (list === null) {
+    Admin.exists({ _id }, (err) => {
+      if (err) {
+        console.log(err);
+        res.json({ status: false, message: "Admin not found" });
+      } else {
+        Student.find(query, (err, list) => {
+          if (err) {
+            console.log(err);
             res.json({ status: false });
           } else {
-            const filteredList = list.reduce((result, student) => {
-              const { nim, name, voted } = student;
-              result.push({ nim, name, voted });
-              return result;
-            }, []);
-            res.json({ status: true, studentList: filteredList });
+            // filter list to only display {NIM, name, voted}
+            if (list === null) {
+              res.json({ status: false });
+            } else {
+              const filteredList = list.reduce((result, student) => {
+                const { nim, name, voted } = student;
+                result.push({ nim, name, voted });
+                return result;
+              }, []);
+              res.json({ status: true, studentList: filteredList });
+            }
           }
-        }
-      });
-    }
+        });
+      }
+    });
   });
-});
 
 // recap vote
 router.route("/recap/votingRecap").get((req, res) => {
@@ -175,7 +177,5 @@ router.route("/recap/votingRecap").get((req, res) => {
     }
   });
 });
-
-
 
 export default router;

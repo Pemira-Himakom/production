@@ -7,6 +7,7 @@ const candidateSchema = new Schema({
   candidateNumber: Number,
   voteCounter: { type: Number, default: 0 },
   date: Date,
+  batch: String,
 });
 
 const Candidate = new mongoose.model("candidate", candidateSchema);
