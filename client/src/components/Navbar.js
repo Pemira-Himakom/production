@@ -91,7 +91,7 @@ const Header = () => {
                 className={
                   close
                     ? "hidden "
-                    : "flex flex-col md:absolute text-sm bg-[#21201D] md:shadow-xl w-full px-5 py-5 rounded-b-xl md:left-0 transition-all mt-[0.9rem] -z-30 "
+                    : "flex flex-col md:absolute text-sm bg-[#21201D] md:shadow-xl w-full px-5 py-5 rounded-b-md md:left-0 transition-all mt-[0.8rem] -z-30 "
                 }
               >
                 <ul>
