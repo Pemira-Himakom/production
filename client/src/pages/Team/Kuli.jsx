@@ -17,7 +17,7 @@ export default function Kuli() {
             <div className='flex flex-row justify-evenly h-full text-[#ffff] text-lg'>
                 {/* <div className='border-r-[3px] border-[#D4A976]'> */}
                 <div className='w-[20%] h-fit space-y-5 mt-8'>
-                    <img src={Pm} alt='Pm'/>
+                    <img src={Pm} alt='Pm' className='rounded-tl-2xl'/>
                     <h1>Project Manager</h1>
                 </div>
                 <div className='h-full border-[2px] border-[#D4A976]'/>
@@ -36,7 +36,7 @@ export default function Kuli() {
 
                 <div className='w-[20%] h-fit self-end space-y-5 mb-8'>
                     <h1>Backend</h1>
-                    <img src={Be} alt='Be'/>
+                    <img src={Be} alt='Be' className='rounded-br-2xl'/>
                 </div>
                 
                 {/* </div> */}
