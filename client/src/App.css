@@ -621,3 +621,15 @@ body {
     overflow: visible;
     /* opacity: ; */
 }
+
+.teambox {
+    height: 90%;
+    width: 100%;
+    border: 3px #D4A976 solid;
+}
+
+.tbl {
+    height: 100%;
+    border-left: 3px #D4A976 solid;
+    border-right: 3px #D4A976 solid;
+}
