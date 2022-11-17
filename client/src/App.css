@@ -612,3 +612,12 @@ body {
     /* place-items: center */
 }
 
+.webteam {
+    background-image: url('.././src/img/team/teamhome.webp');
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-color: #000;
+    overflow: visible;
+    /* opacity: ; */
+}
